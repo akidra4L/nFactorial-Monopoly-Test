@@ -1,5 +1,8 @@
 package MonopolyGame;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class Board {
@@ -29,14 +32,15 @@ public class Board {
 		p.setPosition(p.getPosition() + this.diceValue);
 	}
 	
-	public void initializePlayers() {
-		Player p1 = new Player("Alikhan", 0);
-		Player p2 = new Player("Aliya", 0);
-		Player p3 = new Player("Rayymbek", 0);
+	public void initializePlayers(int number) throws IOException {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
-		allPlayers.add(p1);
-		allPlayers.add(p2);
-		allPlayers.add(p3);
+		for(int i = 1; i <= number; i++) {
+			System.out.println("Player " + i + ": ");
+			String name = reader.readLine();
+			Player p = new Player(name, 0);
+			allPlayers.add(p);
+		}
 	}
 	
 	public void initializeGameBoard() {

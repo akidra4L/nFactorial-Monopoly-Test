@@ -12,9 +12,9 @@ public class Monopoly {
 		this.board = new Board();
 	}
 	
-	public void setupGame() {
+	public void setupGame(int number) throws IOException {
 		this.board.initializeGameBoard();
-		this.board.initializePlayers();
+		this.board.initializePlayers(number);
 		this.board.pickFirstRandomly();
 	}
 	
@@ -44,6 +44,7 @@ public class Monopoly {
 				p.setPosition((p.getPosition() + dice) % 8);
 				
 				if(gameBoard.get(p.getPosition()).getPosition() == 0) {
+					System.out.println("Congratulations player: " + p.getName() + " you receive 500 000 tenge.");
 					p.setMoney(p.getMoney() + 500000);
 				}
 				
@@ -57,6 +58,7 @@ public class Monopoly {
 					System.out.println(p.getName() + " this spot is not Available to buy. You should pay.\n");
 					p.setMoney(p.getMoney() - 250000);
 				}
+				System.out.println();
 			}
 		}
 	}
