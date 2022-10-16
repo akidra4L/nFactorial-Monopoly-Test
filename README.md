@@ -18,5 +18,5 @@
 - Каждый круг дает игрокам по 500 000 kzt
 - При попадании игрока на занятый блок, он обязана выплатить 500 000 kzt
 
-Made by: Alikhan Gubayev
-Telegram: @akidra4L
+<b>Made by</b>: Alikhan Gubayev <br />
+<b>Telegram</b>: @akidra4L
