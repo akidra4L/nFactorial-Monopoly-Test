@@ -4,10 +4,10 @@ public class CornerSquare extends BoardLocation {
 	private String name;
 
 	public CornerSquare() {
-		this(0, "Start");
+		this(null, 0, "Start", Color.WHITE);
 	}
-	public CornerSquare(int position, String name) {
-		super(position, true);
+	public CornerSquare(Player owner, int position, String name, Color color) {
+		super(owner, position, true, color);
 		this.name = name;
 	}
 	
@@ -17,6 +17,6 @@ public class CornerSquare extends BoardLocation {
 	}
 	
 	public String toString() {
-		return super.toString() + this.name;
+		return super.toString() + " " + this.name;
 	}
 }

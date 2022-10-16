@@ -44,14 +44,14 @@ public class Board {
 	}
 	
 	public void initializeGameBoard() {
-		gameBoard.add(new CornerSquare(0, "Start"));
-		gameBoard.add(new CornerSquare(1, "Almaty"));
-		gameBoard.add(new CornerSquare(2, "Astana"));
-		gameBoard.add(new CornerSquare(3, "Uralsk"));
-		gameBoard.add(new CornerSquare(4, "Aksay"));
-		gameBoard.add(new CornerSquare(5, "Aktau"));
-		gameBoard.add(new CornerSquare(6, "Taraz"));
-		gameBoard.add(new CornerSquare(7, "Shymkent"));
+		gameBoard.add(new CornerSquare(null, 0, "Start", Color.WHITE));
+		gameBoard.add(new CornerSquare(null, 1, "Almaty", Color.RED));
+		gameBoard.add(new CornerSquare(null, 2, "Astana", Color.RED));
+		gameBoard.add(new CornerSquare(null, 3, "Uralsk", Color.GREEN));
+		gameBoard.add(new CornerSquare(null, 4, "Aksay", Color.GREEN));
+		gameBoard.add(new CornerSquare(null, 5, "Aktau", Color.BLUE));
+		gameBoard.add(new CornerSquare(null, 6, "Taraz", Color.BLUE));
+		gameBoard.add(new CornerSquare(null, 7, "Shymkent", Color.WHITE));
 	}
 	
 	public int getDiceValue() {

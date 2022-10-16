@@ -7,7 +7,7 @@ public class Player {
 	private double money;
 	private boolean bankrupt;
 	private int position;
-	private Vector <Integer> owned;
+	private Vector <Integer> owned = new Vector<Integer>();
 	
 	public Player(String name, int position) {
 		this.name = name;
@@ -16,10 +16,8 @@ public class Player {
 		this.position = position;
 	}
 	
-	public void buyOrNot(String command, BoardLocation bl) {
-		if(command.equals("buy")) {
-			owned.add(bl.getPosition());
-		}
+	public void buy(BoardLocation bl) {
+		owned.add(bl.getPosition());
 	}
 	
 	public String getName() {
@@ -34,6 +32,9 @@ public class Player {
 	}
 	public void setMoney(double money) {
 		this.money = money;
+	}
+	public void addMoney(double money) {
+		this.money += money;
 	}
 	
 	public boolean getBankrupt() {

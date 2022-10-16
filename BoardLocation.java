@@ -3,17 +3,28 @@ package MonopolyGame;
 public abstract class BoardLocation {
 	private static final int maxSpaces = 8;
 	private int position;
+	private Player owner;
 	private boolean isAvailable;
+	private Color color;
 	
 	public BoardLocation() {
-		this(0, true);
+		this(null, 0, true, Color.BLUE);
 	}
-	public BoardLocation(int position, boolean isAvailable) {
+	public BoardLocation(Player owner, int position, boolean isAvailable, Color color) {
+		this.owner = owner;
 		this.position = position;
 		this.isAvailable = isAvailable;
+		this.color = color;
 	}
 	
 	public abstract String getName();
+	
+	public Player getOwner() {
+		return this.owner;
+	}
+	public void setOwner(Player owner) {
+		this.owner = owner;
+	}
 	
 	public boolean isAvailable() {
 		return this.isAvailable;
@@ -27,7 +38,14 @@ public abstract class BoardLocation {
 		return this.position;
 	}
 	
+	public Color getColor() {
+		return this.color;
+	}
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	
 	public String toString() {
-		return this.position + " ";
+		return this.position + " " + this.owner;
 	}
 }
